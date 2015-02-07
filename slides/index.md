@@ -1,8 +1,17 @@
-﻿- title : FsReveal
-- description : Introduction to FsReveal
-- author : Karlkim Suwanmongkol
+- title : Missing Model Mysteries
+- description : Exploring the "dark matter" of software
+- author : Kijana Woodard
 - theme : night
 - transition : default
+
+***
+
+# Missing Model Mysteries
+
+## Austin .Net User Group
+### February 2, 2015
+
+**Kijana Woodard**
 
 ***
 
