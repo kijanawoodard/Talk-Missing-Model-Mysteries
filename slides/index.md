@@ -14,6 +14,79 @@
 **Kijana Woodard**
 
 ***
+## About Me
+
+Live in Dallas, TX
+
+Programming professionally since 1996
+
+.Net since 1.0
+
+Contracting since 2010
+
+***
+## On the web
+
+@kijanawoodard
+
+http://kijanawoodard.com
+
+RavenDB forum
+
+DDD/CQRS forum
+
+NServiceBus forum
+
+***
+## Dark Matter
+
+> Dark matter is a hypothetical kind of matter that cannot be seen with telescopes but accounts for most of the matter in the Universe. The existence and properties of dark matter are inferred from its gravitational effects on visible matter, radiation and the large-scale structure of the Universe.
+
+> [Wikipedia](en.wikipedia.org/wiki/Dark_matter)
+
+***
+
+## Dark Matter of Software
+
+- Missing Models
+- Lurking Business Requirements
+- Phantom Business Requirements
+- Strangled Business Requirements
+
+***
+
+> Essentially, all models are wrong, but some are useful. 
+
+> [George E. P. Box](http://en.wikiquote.org/wiki/George_E._P._Box)
+
+***
+
+## Domain
+###Mobile Dry Cleaning and Laundry
+
+- Customers bring clothes at convenient places e.g. their office.
+- Drivers follow Routes to pick up Orders
+- Facilities clean the clothes
+- Driver takes clothes to drop off Location
+
+
+***
+
+## Advanced Distributed Systems Design course with Udi Dahan
+
+FREE - 2 days of the 5 day course.
+
+Valid for the next two weeks only!
+
+###http://particular.net/austin-nug
+
+###Code: KWXBI
+
+- Distributed Systems Theory
+- Coupling: Platform, Temporal, & Spatial
+- Bus & Broker Architectural Styles 
+
+***
 
 ### What is FsReveal?
 
