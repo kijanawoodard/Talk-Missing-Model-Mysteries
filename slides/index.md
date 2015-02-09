@@ -14,6 +14,22 @@
 **Kijana Woodard**
 
 ***
+
+## Advanced Distributed Systems Design course with Udi Dahan
+
+FREE - 2 days of the 5 day course.
+
+Valid for the next two weeks only!
+
+###http://particular.net/austin-nug
+
+###Code: KWXBI
+
+- Distributed Systems Theory
+- Coupling: Platform, Temporal, & Spatial
+- Bus & Broker Architectural Styles 
+
+***
 ## About Me
 
 Live in Dallas, TX
@@ -46,7 +62,7 @@ NServiceBus forum
 
 ***
 
-## Dark Matter of Software
+## Dark Matter of Software	
 
 - Missing Models
 - Lurking Business Requirements
@@ -61,6 +77,8 @@ NServiceBus forum
 
 ***
 
+***
+
 ## Domain
 ###Mobile Dry Cleaning and Laundry
 
@@ -69,6 +87,52 @@ NServiceBus forum
 - Facilities clean the clothes
 - Driver takes clothes to drop off Location
 
+***
+
+## An Order
+	Order Number
+	
+	Customer Info //name, phone, email, etc
+
+	Pickup Location
+	Drop Off Location
+
+	Garments
+	Special Instructions
+
+	Order Status //pending pickup, picked up, processing, awaiting delivery, delivered
+***
+
+## A Route
+
+	Driver
+	Vehicle
+	Stops //location, status [pending, completeted, skipped]
+***
+
+## Missing Models
+
+> When being confronted with "complex projections" it's a sign one should reflect whether or not one is missing a model that is able to answer a question.
+
+> [Yves Reynhout](https://seabites.wordpress.com/) - DDD/CQRS forum Jan 20, 2015
+
+***
+
+## Lurking Business Requirements
+
+> [Larry McNutt](https://www.linkedin.com/in/larrymcnutt)
+
+***
+
+## Phantom Business Requirements
+
+> [Dan Bishop](https://github.com/Bishbulb)
+
+***
+
+## Strangled Business Requirements
+
+> Me
 
 ***
 
