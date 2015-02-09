@@ -296,22 +296,43 @@ Hat Tip: Me
 ***
 ## Why does this happen?
 
-- Data integrity
+- Overzealous Data integrity rules
 - UX Not fully considered
 - UX tacked on at the end of the project
 
 ***
 ## Messaging - SOA
 
-> A service is the technical authority for a specific business capability.
+> A service is the technical authority for a specific business capability. 
+
+> All data and business rules reside within the service.
 
 > [Udi Dahan](http://www.udidahan.com/2015/02/02/finding-service-boundaries-%E2%80%93-illustrated-in-healthcare/)
 
+- A service is Autonomous
+- A service exerts it's authority everywhere
+
 ***
 ## How can Messaging help?
+### Clear separation of concerns
 
-- Clear separation of concerns
-- Could these be separate applications? 
+- Sales
+- Delivery Management
+- Processing
+
+***
+## Could these be separate applications? 
+
+- No shared API
+- No shared database
+
+***
+## Why not?
+
+- Too hard to deploy applications
+- Too hard to create more models
+- Too hard to administer more databases
+- Too hard to make global changes
 
 ***
 
