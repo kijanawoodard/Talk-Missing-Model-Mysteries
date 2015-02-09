@@ -76,40 +76,6 @@ NServiceBus forum
 > [George E. P. Box](http://en.wikiquote.org/wiki/George_E._P._Box)
 
 ***
-
-***
-
-## Domain
-###Mobile Dry Cleaning and Laundry
-
-- Customers bring clothes at convenient places e.g. their office.
-- Drivers follow Routes to pick up Orders
-- Facilities clean the clothes
-- Driver takes clothes to drop off Location
-
-***
-
-## An Order
-	Order Number
-	
-	Customer Info //name, phone, email, etc
-
-	Pickup Location
-	Drop Off Location
-
-	Garments
-	Special Instructions
-
-	Order Status //pending pickup, picked up, processing, awaiting delivery, delivered
-***
-
-## A Route
-
-	Driver
-	Vehicle
-	Stops //location, status [pending, completeted, skipped]
-***
-
 ## Missing Models
 
 > When being confronted with "complex projections" it's a sign one should reflect whether or not one is missing a model that is able to answer a question.
@@ -118,24 +84,244 @@ NServiceBus forum
 
 ***
 
+## Domain
+###Mobile Dry Cleaning and Laundry
+
+- Customers bring Garments to convenient Locations [e.g. their office]
+- Drivers pick up Orders at the Locations
+- Central Facilities clean the Garments
+- Drivers take Orders back to Location
+
+***
+
+## An Order
+	Order Number	
+	Customer Info //name, phone, email, etc
+	Garments //type, special instructions, etc
+	Location //1313 Mockingbird Ln, SomeTown USA
+	Order Status //pending, processing, delivered
+
+## A Route
+
+	Driver
+	Vehicle
+	Stops //location, status [pending, completeted]
+
+***
+## New Requirement!
+
+***
+
+## Killer Feature
+
+### Separate pick up and drop off locations
+
+***
+## An Order
+	Order Number	
+	Customer Info //name, phone, email, etc
+	Garments //type, special instructions, etc
+	Pickup Location //1313 Mockingbird Ln, SomeTown USA
+	Drop Off Location //512 Main St, NearTown USA
+	Order Status //pending, processing, delivered
+
+***
+## New Requirement!
+###  It's hard to organize Drivers
+
+- Please normalize addresses.
+- Add more status info.
+
+***
+## An Order
+	Order Number	
+	Customer Info //name, phone, email, etc
+	Garments //type, special instructions, etc
+	Pickup Location //locations/1
+	Drop Off Location //locations/15
+	Order Status //pending, picked up, processing, en route, delivered
+
+***
+## New Requirement!
+### We need better visibility at Facilities
+
+***
+## An Order
+	Order Number	
+	Customer Info //name, phone, email, etc
+	Garments //type, special instructions, etc
+	Pickup Location //locations/1
+	Drop Off Location //locations/15
+	Order Status //pending, picked up, prep, perc, package, en route, delivered
+
+***
+
+## Problems!
+
+***
+## An Order
+	Order Number	
+	Customer Info //name, phone, email, etc
+	Garments //type, special instructions, etc
+	Pickup Location //locations/1
+	Drop Off Location //locations/15
+	Order Status //pending, picked up, prep, perc, package, en route, delivered
+
+- We don't want customers to see Processing status
+- We don't want Drivers and Facilities to see Customer Info
+
+***
+## New Requirement!
+### We need Custom Locations
+
+- One time pick up or drop off locations
+- Show recent custom locations
+
+***
+## An Order
+	Order Number	
+	Customer Info //name, phone, email, etc
+	Garments //type, special instructions, etc
+	Pickup Location //1313 Mockingbird Ln???????
+	Drop Off Location //?????
+	Order Status //pending, picked up, prep, perc, package, en route, delivered
+
+***
+## Correction
+
+- A Customer Order
+- A Delivery Order
+- A Processing Order
+- A Planning Route
+- An In Progress Route
+- A Route Report
+
+***
+## Why does this happen?
+
+- Agile iterations missing the big picture
+- Noun-itis
+
+***
 ## Lurking Business Requirements
 
-> [Larry McNutt](https://www.linkedin.com/in/larrymcnutt)
+### Requirements floating in the ether
+
+Hat Tip: [Larry McNutt](https://www.linkedin.com/in/larrymcnutt)
+
+***
+## Example
+
+### Invoice Billing
+- Frequent Customers can choose to be invoiced monthly
+- We want to be able to extend Credits to Customers
+- Customers should be able to pay in advance
+- Customers should be able to get refunds of Credit Balances
+
+***
+## Accounts Receivable System
+### Oops, we just built one
+
+- Can be extreme
+
+***
+## Why does this happen?
+
+- Inexperienced developers
+- Insufficient domain conversations
+- Stakeholders underestimate relative weights
 
 ***
 
 ## Phantom Business Requirements
+### Inferred requirements that never seem to materialize
+Hat Tip: [Dan Bishop](https://github.com/Bishbulb)
 
-> [Dan Bishop](https://github.com/Bishbulb)
+***
+## Example
+
+### Mandatory Stops
+- Even if there are no Orders for a Location, drive there anyway
+- Drop off marketing materials, garment tags, etc
+
+***
+## Feels like a Lurking Business Requirement
+
+***
+## Implementation
+
+- Add flag to Location?
+- Is it a Route feature?
+- Do we need to model "Marketing Materials"?
+
+***
+## Does it clarify or muddle the domain? 
+
+- Do the users want to talk about this?
+- Are you adding more code and tests to prop up this feature?
+
+***
+## Why does this happen?
+
+- Experienced developers
+- Don't want to miss something important
 
 ***
 
-## Strangled Business Requirements
+## Muzzled Models
 
-> Me
+### Model is artificially constrained for non-business reasons
+
+Hat Tip: Me
+
+***
+## Example
+
+### Long form with required fields
+
+- Don't have one piece of information
+- Leave computer to get it
+- Session Expired!
+
+***
+## Example
+
+### Loading Orders on Truck
+
+- Dispatcher marks Truck as unavailable
+- Driver is trying to Load truck
+- App errors and won't allow progress
+- Lies!
+
+***
+## Why does this happen?
+
+- Data integrity
+- UX Not fully considered
+- UX tacked on at the end of the project
+
+***
+## Messaging - SOA
+
+> A service is the technical authority for a specific business capability.
+
+> [Udi Dahan](http://www.udidahan.com/2015/02/02/finding-service-boundaries-%E2%80%93-illustrated-in-healthcare/)
+
+***
+## How can Messaging help?
+
+- Clear separation of concerns
+- Could these be separate applications? 
 
 ***
 
+## Thank you!
+
+***
+
+## Discuss
+
+***
 ## Advanced Distributed Systems Design course with Udi Dahan
 
 FREE - 2 days of the 5 day course.
@@ -150,125 +336,4 @@ Valid for the next two weeks only!
 - Coupling: Platform, Temporal, & Spatial
 - Bus & Broker Architectural Styles 
 
-***
-
-### What is FsReveal?
-
-- Generates [reveal.js](http://lab.hakim.se/reveal-js/#/) presentation from [markdown](http://daringfireball.net/projects/markdown/)
-- Utilizes [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting) for markdown parsing
-
-***
-
-### Reveal.js
-
-- A framework for easily creating beautiful presentations using HTML.
-
-
-> **Atwood's Law**: any application that can be written in JavaScript, will eventually be written in JavaScript.
-
-***
-
-### FSharp.Formatting
-
-- F# tools for generating documentation (Markdown processor and F# code formatter).
-- It parses markdown and F# script file and generates HTML or PDF.
-- Code syntax highlighting support.
-- It also evaluates your F# code and produce tooltips.
-
-***
-
-### Syntax Highlighting
-
-#### F# (with tooltips)
-
-    let a = 5
-    let factorial x = [1..x] |> List.reduce (*)
-    let c = factorial a
-
----
-
-#### C#
-
-    [lang=cs]
-    using System;
-
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Hello, world!");
-        }
-    }
-
----
-
-#### JavaScript
-
-    [lang=js]
-    function copyWithEvaluation(iElem, elem) {
-        return function (obj) {
-            var newObj = {};
-            for (var p in obj) {
-                var v = obj[p];
-                if (typeof v === "function") {
-                    v = v(iElem, elem);
-                }
-                newObj[p] = v;
-            }
-            if (!newObj.exactTiming) {
-                newObj.delay += exports._libraryDelay;
-            }
-            return newObj;
-        };
-    }
-
-
----
-
-#### Haskell
- 
-    [lang=haskell]
-    recur_count k = 1 : 1 : zipWith recurAdd (recur_count k) (tail (recur_count k))
-            where recurAdd x y = k * x + y
-
-    main = do
-      argv <- getArgs
-      inputFile <- openFile (head argv) ReadMode
-      line <- hGetLine inputFile
-      let [n,k] = map read (words line)
-      printf "%d\n" ((recur_count k) !! (n-1))
-
-*code from [NashFP/rosalind](https://github.com/NashFP/rosalind/blob/master/mark_wutka%2Bhaskell/FIB/fib_ziplist.hs)*
-
----
-
-### SQL
-
-    [lang=sql]
-    select *
-    from
-    (select 1 as Id union all select 2 union all select 3) as X
-    where Id in (@Ids1, @Ids2, @Ids3)
-
-*sql from [Dapper](https://code.google.com/p/dapper-dot-net/)*
-
-***
-
-**Bayes' Rule in LaTeX**
-
-$ \Pr(A|B)=\frac{\Pr(B|A)\Pr(A)}{\Pr(B|A)\Pr(A)+\Pr(B|\neg A)\Pr(\neg A)} $
-
-***
-
-### The Reality of a Developer's Life 
-
-**When I show my boss that I've fixed a bug:**
-  
-![When I show my boss that I've fixed a bug](http://www.topito.com/wp-content/uploads/2013/01/code-07.gif)
-  
-**When your regular expression returns what you expect:**
-  
-![When your regular expression returns what you expect](http://www.topito.com/wp-content/uploads/2013/01/code-03.gif)
-  
-*from [The Reality of a Developer's Life - in GIFs, Of Course](http://server.dzone.com/articles/reality-developers-life-gifs)*
 
