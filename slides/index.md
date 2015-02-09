@@ -9,15 +9,20 @@
 # Missing Model Mysteries
 
 ## Austin .Net User Group
-### February 2, 2015
+February 9, 2015
 
-**Kijana Woodard**
+###Kijana Woodard
+
+***
+
+##Slides
+https://github.com/kijanawoodard/Talk-Missing-Model-Mysteries
 
 ***
 
 ## Advanced Distributed Systems Design course with Udi Dahan
 
-FREE - 2 days of the 5 day course.
+FREE - 2 days of the 5 day course
 
 Valid for the next two weeks only!
 
@@ -47,11 +52,11 @@ Contracting since 2010
 
 http://kijanawoodard.com
 
+NServiceBus forum
+
 RavenDB forum
 
 DDD/CQRS forum
-
-NServiceBus forum
 
 ***
 ## Dark Matter
@@ -67,7 +72,7 @@ NServiceBus forum
 - Missing Models
 - Lurking Business Requirements
 - Phantom Business Requirements
-- Strangled Business Requirements
+- Muzzled Models
 
 ***
 
@@ -101,11 +106,12 @@ NServiceBus forum
 	Location //1313 Mockingbird Ln, SomeTown USA
 	Order Status //pending, processing, delivered
 
-## A Route
+<!--## A Route
 
 	Driver
 	Vehicle
 	Stops //location, status [pending, completeted]
+-->
 
 ***
 ## New Requirement!
@@ -129,8 +135,8 @@ NServiceBus forum
 ## New Requirement!
 ###  It's hard to organize Drivers
 
-- Please normalize addresses.
-- Add more status info.
+- Normalize addresses
+- Add more status info
 
 ***
 ## An Order
@@ -167,8 +173,9 @@ NServiceBus forum
 	Drop Off Location //locations/15
 	Order Status //pending, picked up, prep, perc, package, en route, delivered
 
-- We don't want customers to see Processing status
-- We don't want Drivers and Facilities to see Customer Info
+- We don't want Customers to see Processing status
+- We don't want Drivers to see Customer Info
+- We don't want Facilities to see Customer Info
 
 ***
 ## New Requirement!
@@ -187,7 +194,13 @@ NServiceBus forum
 	Order Status //pending, picked up, prep, perc, package, en route, delivered
 
 ***
-## Correction
+## Why does this happen?
+
+- Agile iterations can miss the big picture
+- Noun-itis
+
+***
+## Suggestions
 
 - A Customer Order
 - A Delivery Order
@@ -195,12 +208,6 @@ NServiceBus forum
 - A Planning Route
 - An In Progress Route
 - A Route Report
-
-***
-## Why does this happen?
-
-- Agile iterations missing the big picture
-- Noun-itis
 
 ***
 ## Lurking Business Requirements
@@ -291,13 +298,18 @@ Hat Tip: Me
 - Dispatcher marks Truck as unavailable
 - Driver is trying to Load truck
 - App errors and won't allow progress
-- Lies!
+- Ok, I'll lie!
+
+***
+> The warehouse is the system of record, not your software.
+
+> [Greg Young](http://geteventstore.com)
 
 ***
 ## Why does this happen?
 
 - Overzealous Data integrity rules
-- UX Not fully considered
+- UX not fully considered
 - UX tacked on at the end of the project
 
 ***
@@ -333,10 +345,6 @@ Hat Tip: Me
 - Too hard to create more models
 - Too hard to administer more databases
 - Too hard to make global changes
-
-***
-
-## Thank you!
 
 ***
 
