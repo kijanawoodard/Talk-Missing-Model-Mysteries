@@ -300,7 +300,7 @@ Hat Tip: Me
 
 - Dispatcher marks Truck as unavailable
 - Driver is trying to Load truck
-- App errors and won't allow progress
+- App errors won't allow progress
 - Ok, I'll lie!
 
 ***
