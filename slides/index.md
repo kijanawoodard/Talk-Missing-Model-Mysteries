@@ -181,35 +181,20 @@ DDD/CQRS forum
 - We don't want Facilities to see Customer Info
 
 ***
-## New Requirement!
-### We need Custom Locations
-
-- One time pick up or drop off locations
-- Show recent custom locations
-
-***
-## An Order
-	Order Number	
-	Customer Info //name, phone, email, etc
-	Garments //type, special instructions, etc
-	Pickup Location //1313 Mockingbird Ln???????
-	Drop Off Location //?????
-	Order Status //pending, picked up, prep, perc, package, en route, delivered
-
-***
 ## Why does this happen?
 
 - Agile iterations can miss the big picture
-- Noun-itis
+- Noun-centered thinking
 
 ***
 ## Suggestions
 
-- A Customer Order
+- A Sales Order
 - A Delivery Order
 - A Processing Order
-- A Planning Route
-- An In Progress Route
+
+- A Recurring/Planned Route
+- A Route Instance
 - A Route Report
 
 ***
@@ -223,16 +208,19 @@ Hat Tip: [Larry McNutt](https://www.linkedin.com/in/larrymcnutt)
 ## Example
 
 ### Invoice Billing
+- Send Invoices
+- Collect Payments
 - Frequent Customers can choose to be invoiced monthly
 - We want to be able to extend Credits to Customers
 - Customers should be able to pay in advance
 - Customers should be able to get refunds of Credit Balances
 
 ***
-## Accounts Receivable System
-### Oops, we just built one
+##No one ever mentioned...
 
-- Can be extreme
+### Accounts Receivable System
+
+- Oops, we just built one
 
 ***
 ## Why does this happen?
@@ -265,7 +253,7 @@ Hat Tip: [Dan Bishop](https://github.com/Bishbulb)
 - Do we need to model "Marketing Materials"?
 
 ***
-## Does it clarify or muddle the domain? 
+## Does it clarify the domain? 
 
 - Do the users want to talk about this?
 - Are you adding more code and tests to prop up this feature?
@@ -296,10 +284,11 @@ Hat Tip: Me
 ***
 ## Example
 
-### Loading Orders on Truck
+### Storing Orders 
 
-- Dispatcher marks Truck as unavailable
-- Driver is trying to Load truck
+- Outbound racks are full
+- Inbound racks are empty
+- Rule: cannot put outgoing order on inbound rack
 - App errors won't allow progress
 - Ok, I'll lie!
 
@@ -316,7 +305,9 @@ Hat Tip: Me
 - UX tacked on at the end of the project
 
 ***
-## Messaging - SOA
+## What can we do?
+***
+## SOA + Messaging
 
 > A service is the technical authority for a specific business capability. 
 
@@ -328,26 +319,35 @@ Hat Tip: Me
 - A service exerts it's authority everywhere
 
 ***
-## How can Messaging help?
+## How can SOA + Messaging help?
 ### Clear separation of concerns
 
 - Sales
 - Delivery Management
 - Processing
 
-***
-## Could these be separate applications? 
-
 - No shared API
 - No shared database
 
 ***
-## Why not?
+## Document Database
+
+- RavenDB
+- MongoDB
+ 
+***
+## Event Sourcing 
+
+- A log of everything that's happened
+
+***
+## Why wouldn't we do this?
 
 - Too hard to deploy applications
 - Too hard to create more models
 - Too hard to administer more databases
 - Too hard to make global changes
+- Too hard to introduce new technologies
 
 ***
 
