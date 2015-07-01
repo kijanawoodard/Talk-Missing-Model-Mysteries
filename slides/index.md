@@ -8,15 +8,15 @@
 
 # Missing Model Mysteries
 
-## Austin .Net User Group
-February 9, 2015
+## North Dallas .Net User Group
+July 1, 2015
 
 ###Kijana Woodard
 
 ***
 
 ##Slides
-https://github.com/kijanawoodard/Talk-Missing-Model-Mysteries
+http://kijanawoodard.github.io/Talk-Missing-Model-Mysteries
 
 ***
 
@@ -24,15 +24,18 @@ https://github.com/kijanawoodard/Talk-Missing-Model-Mysteries
 
 FREE - 2 days of the 5 day course
 
-Valid for the next two weeks only!
+###http://particular.net/northdallas
 
-###http://particular.net/austin-nug
-
-###Code: KWXBI
+###Code: OWYRYY
+###Expires: July  20th
 
 - Distributed Systems Theory
 - Coupling: Platform, Temporal, & Spatial
 - Bus & Broker Architectural Styles 
+
+###September 7-11: ADSD Course - Austin
+###December 1-4: NSBCon 2015
+http://particular.net/nsbcon2015
 
 ***
 ## About Me
@@ -353,16 +356,19 @@ Hat Tip: Me
 ***
 ## Advanced Distributed Systems Design course with Udi Dahan
 
-FREE - 2 days of the 5 day course.
+FREE - 2 days of the 5 day course
 
-Valid for the next two weeks only!
+###http://particular.net/northdallas
 
-###http://particular.net/austin-nug
-
-###Code: KWXBI
+###Code: OWYRYY
+###Expires: July  20th
 
 - Distributed Systems Theory
 - Coupling: Platform, Temporal, & Spatial
 - Bus & Broker Architectural Styles 
+
+###September 7-11: ADSD Course - Austin
+###December 1-4: NSBCon 2015
+http://particular.net/nsbcon2015
 
 
