@@ -319,7 +319,7 @@ Hat Tip: Me
 - A service exerts it's authority everywhere
 
 ***
-## How can SOA + Messaging help?
+## SOA + Messaging
 ### Clear separation of concerns
 
 - Sales
