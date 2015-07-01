@@ -439,58 +439,11 @@
 
 <section >
 
-<h2>New Requirement!</h2>
-
-<h3>We need Custom Locations</h3>
-
-<ul>
-<li>One time pick up or drop off locations</li>
-<li>Show recent custom locations</li>
-</ul>
-
-</section>
-
-</section>
-
-<section >
-
-<section >
-
-<h2>An Order</h2>
-
-<table class="pre"><tr><td class="lines"><pre class="fssnip">
-<span class="l">1: </span>
-<span class="l">2: </span>
-<span class="l">3: </span>
-<span class="l">4: </span>
-<span class="l">5: </span>
-<span class="l">6: </span>
-</pre>
-</td>
-<td class="snippet"><pre class="fssnip">
-<span class="i">Order</span> <span class="i">Number</span>    
-<span class="i">Customer</span> <span class="i">Info</span> <span class="c">//name, phone, email, etc</span>
-<span class="i">Garments</span> <span class="c">//type, special instructions, etc</span>
-<span class="i">Pickup</span> <span class="i">Location</span> <span class="c">//1313 Mockingbird Ln???????</span>
-<span class="i">Drop</span> <span class="i">Off</span> <span class="i">Location</span> <span class="c">//?????</span>
-<span class="i">Order</span> <span class="i">Status</span> <span class="c">//pending, picked up, prep, perc, package, en route, delivered</span></pre>
-</td>
-</tr>
-</table>
-
-</section>
-
-</section>
-
-<section >
-
-<section >
-
 <h2>Why does this happen?</h2>
 
 <ul>
 <li>Agile iterations can miss the big picture</li>
-<li>Noun-itis</li>
+<li>Noun-centered thinking</li>
 </ul>
 
 </section>
@@ -504,11 +457,11 @@
 <h2>Suggestions</h2>
 
 <ul>
-<li>A Customer Order</li>
+<li>A Sales Order</li>
 <li>A Delivery Order</li>
-<li>A Processing Order</li>
-<li>A Planning Route</li>
-<li>An In Progress Route</li>
+<li><p>A Processing Order</p></li>
+<li>A Recurring/Planned Route</li>
+<li>A Route Instance</li>
 <li>A Route Report</li>
 </ul>
 
@@ -539,6 +492,8 @@
 <h3>Invoice Billing</h3>
 
 <ul>
+<li>Send Invoices</li>
+<li>Collect Payments</li>
 <li>Frequent Customers can choose to be invoiced monthly</li>
 <li>We want to be able to extend Credits to Customers</li>
 <li>Customers should be able to pay in advance</li>
@@ -553,12 +508,12 @@
 
 <section >
 
-<h2>Accounts Receivable System</h2>
+<h2>No one ever mentioned...</h2>
 
-<h3>Oops, we just built one</h3>
+<h3>Accounts Receivable System</h3>
 
 <ul>
-<li>Can be extreme</li>
+<li>Oops, we just built one</li>
 </ul>
 
 </section>
@@ -638,7 +593,7 @@
 
 <section >
 
-<h2>Does it clarify or muddle the domain?</h2>
+<h2>Does it clarify the domain?</h2>
 
 <ul>
 <li>Do the users want to talk about this?</li>
@@ -702,11 +657,12 @@
 
 <h2>Example</h2>
 
-<h3>Loading Orders on Truck</h3>
+<h3>Storing Orders</h3>
 
 <ul>
-<li>Dispatcher marks Truck as unavailable</li>
-<li>Driver is trying to Load truck</li>
+<li>Outbound racks are full</li>
+<li>Inbound racks are empty</li>
+<li>Rule: cannot put outgoing order on inbound rack</li>
 <li>App errors won't allow progress</li>
 <li>Ok, I'll lie!</li>
 </ul>
@@ -742,9 +698,15 @@
 
 <section >
 
+<h2>What can we do?</h2>
+
+</section>
+
 <section >
 
-<h2>Messaging - SOA</h2>
+<section >
+
+<h2>SOA + Messaging</h2>
 
 <blockquote>
   <p>A service is the technical authority for a specific business capability. 
@@ -765,27 +727,14 @@ All data and business rules reside within the service.
 
 <section >
 
-<h2>How can Messaging help?</h2>
+<h2>How can SOA + Messaging help?</h2>
 
 <h3>Clear separation of concerns</h3>
 
 <ul>
 <li>Sales</li>
 <li>Delivery Management</li>
-<li>Processing</li>
-</ul>
-
-</section>
-
-</section>
-
-<section >
-
-<section >
-
-<h2>Could these be separate applications?</h2>
-
-<ul>
+<li><p>Processing</p></li>
 <li>No shared API</li>
 <li>No shared database</li>
 </ul>
@@ -798,13 +747,43 @@ All data and business rules reside within the service.
 
 <section >
 
-<h2>Why not?</h2>
+<h2>Document Database</h2>
+
+<ul>
+<li>RavenDB</li>
+<li>MongoDB</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Event Sourcing</h2>
+
+<ul>
+<li>A log of everything that's happened</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Why wouldn't we do this?</h2>
 
 <ul>
 <li>Too hard to deploy applications</li>
 <li>Too hard to create more models</li>
 <li>Too hard to administer more databases</li>
 <li>Too hard to make global changes</li>
+<li>Too hard to introduce new technologies</li>
 </ul>
 
 </section>
