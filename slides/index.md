@@ -24,7 +24,7 @@ http://kijanawoodard.github.io/Talk-Missing-Model-Mysteries
 
 FREE - 2 days of the 5 day course
 
-###http://particular.net/northdallas
+###http://go.particular.net/northdallas
 
 ###Code: OWYRYY
 ###Expires: July  20th
@@ -358,7 +358,7 @@ Hat Tip: Me
 
 FREE - 2 days of the 5 day course
 
-###http://particular.net/northdallas
+###http://go.particular.net/northdallas
 
 ###Code: OWYRYY
 ###Expires: July  20th
