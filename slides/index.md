@@ -27,7 +27,7 @@ FREE - 2 days of the 5 day course
 ###http://go.particular.net/northdallas
 
 ###Code: OWYRYY
-###Expires: July  20th
+###Expires: August  25th
 
 - Distributed Systems Theory
 - Coupling: Platform, Temporal, & Spatial
@@ -361,7 +361,7 @@ FREE - 2 days of the 5 day course
 ###http://go.particular.net/northdallas
 
 ###Code: OWYRYY
-###Expires: July  20th
+###Expires: August  25th
 
 - Distributed Systems Theory
 - Coupling: Platform, Temporal, & Spatial
