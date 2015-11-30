@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Top Mistakes Using NServiceBus</title>
-    <meta name="description" content="Things not to do">
+    <title>Missing Model Mysteries</title>
+    <meta name="description" content="Exploring the "dark matter" of software">
     <meta name="author" content="Kijana Woodard">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -44,11 +44,11 @@
 
 <section >
 
-<h1>Top Mistakes Using NServiceBus</h1>
+<h1>Missing Model Mysteries</h1>
 
-<h2>NSBCon 2015</h2>
+<h2>North Dallas .Net User Group</h2>
 
-<p>December 3, 2015</p>
+<p>July 1, 2015</p>
 
 <h3>Kijana Woodard</h3>
 
@@ -62,7 +62,37 @@
 
 <h2>Slides</h2>
 
-<p><a href="http://kijanawoodard.github.io/Talk-Top-Mistakes-Using-NServiceBus">http://kijanawoodard.github.io/Talk-Top-Mistakes-Using-NServiceBus</a></p>
+<p><a href="http://kijanawoodard.github.io/Talk-Missing-Model-Mysteries">http://kijanawoodard.github.io/Talk-Missing-Model-Mysteries</a></p>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Advanced Distributed Systems Design course with Udi Dahan</h2>
+
+<p>FREE - 2 days of the 5 day course</p>
+
+<h3><a href="http://go.particular.net/northdallas">http://go.particular.net/northdallas</a></h3>
+
+<h3>Code: OWYRYY</h3>
+
+<h3>Expires: August  25th</h3>
+
+<ul>
+<li>Distributed Systems Theory</li>
+<li>Coupling: Platform, Temporal, &amp; Spatial</li>
+<li>Bus &amp; Broker Architectural Styles</li>
+</ul>
+
+<h3>September 7-11: ADSD Course - Austin</h3>
+
+<h3>December 1-4: NSBCon 2015</h3>
+
+<p><a href="http://particular.net/nsbcon2015">http://particular.net/nsbcon2015</a></p>
 
 </section>
 
@@ -110,33 +140,688 @@
 
 <section >
 
-<h2>Replication</h2>
+<h2>Dark Matter</h2>
 
-<h2>ETL</h2>
+<blockquote>
+  <p>Dark matter is a hypothetical kind of matter that cannot be seen with telescopes but accounts for most of the matter in the Universe. The existence and properties of dark matter are inferred from its gravitational effects on visible matter, radiation and the large-scale structure of the Universe.
+<a href="en.wikipedia.org/wiki/Dark_matter">Wikipedia</a></p>
+</blockquote>
 
-<h2>Queries</h2>
+</section>
 
-<h2>Scale out slow web service</h2>
+</section>
 
-<h2>Async Commands</h2>
+<section >
 
-<h2>ICallback</h2>
+<section >
 
-<h2>One messages project</h2>
+<h2>Dark Matter of Software</h2>
 
-<h2>One handlers project</h2>
+<ul>
+<li>Missing Models</li>
+<li>Lurking Business Requirements</li>
+<li>Phantom Business Requirements</li>
+<li>Muzzled Models</li>
+</ul>
 
-<h2>Saga Doing Work</h2>
+</section>
 
-<h2>Saga fanout reply</h2>
+</section>
 
-<h2>Fat Events</h2>
+<section >
 
-<h2>Assume DTC is a panacea</h2>
+<blockquote>
+  <p>Essentially, all models are wrong, but some are useful. 
+<a href="http://en.wikiquote.org/wiki/George_E._P._Box">George E. P. Box</a></p>
+</blockquote>
 
-<h2>Simulate Priority</h2>
+</section>
 
-<h2>Force RBAR Database interactions</h2>
+<section >
+
+<section >
+
+<h2>Missing Models</h2>
+
+<blockquote>
+  <p>When being confronted with "complex projections" it's a sign one should reflect whether or not one is missing a model that is able to answer a question.
+<a href="https://seabites.wordpress.com/">Yves Reynhout</a> - DDD/CQRS forum Jan 20, 2015</p>
+</blockquote>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Domain</h2>
+
+<h3>Mobile Dry Cleaning and Laundry</h3>
+
+<ul>
+<li>Customers bring Garments to convenient Locations [e.g. their office]</li>
+<li>Drivers pick up Orders at the Locations</li>
+<li>Central Facilities clean the Garments</li>
+<li>Drivers take Orders back to Location</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>An Order</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Order</span> <span class="i">Number</span>    
+<span class="i">Customer</span> <span class="i">Info</span> <span class="c">//name, phone, email, etc</span>
+<span class="i">Garments</span> <span class="c">//type, special instructions, etc</span>
+<span class="i">Location</span> <span class="c">//1313 Mockingbird Ln, SomeTown USA</span>
+<span class="i">Order</span> <span class="i">Status</span> <span class="c">//pending, processing, delivered</span></pre>
+</td>
+</tr>
+</table>
+
+<!--## A Route
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Driver</span>
+<span class="i">Vehicle</span>
+<span class="i">Stops</span> <span class="c">//location, status [pending, completeted]</span></pre>
+</td>
+</tr>
+</table>
+
+<p>--></p>
+
+</section>
+
+</section>
+
+<section >
+
+<h2>New Requirement!</h2>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Killer Feature</h2>
+
+<h3>Separate pick up and drop off locations</h3>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>An Order</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Order</span> <span class="i">Number</span>    
+<span class="i">Customer</span> <span class="i">Info</span> <span class="c">//name, phone, email, etc</span>
+<span class="i">Garments</span> <span class="c">//type, special instructions, etc</span>
+<span class="i">Pickup</span> <span class="i">Location</span> <span class="c">//1313 Mockingbird Ln, SomeTown USA</span>
+<span class="i">Drop</span> <span class="i">Off</span> <span class="i">Location</span> <span class="c">//512 Main St, NearTown USA</span>
+<span class="i">Order</span> <span class="i">Status</span> <span class="c">//pending, processing, delivered</span></pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>New Requirement!</h2>
+
+<h3>It's hard to organize Drivers</h3>
+
+<ul>
+<li>Normalize addresses</li>
+<li>Add more status info</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>An Order</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Order</span> <span class="i">Number</span>    
+<span class="i">Customer</span> <span class="i">Info</span> <span class="c">//name, phone, email, etc</span>
+<span class="i">Garments</span> <span class="c">//type, special instructions, etc</span>
+<span class="i">Pickup</span> <span class="i">Location</span> <span class="c">//locations/1</span>
+<span class="i">Drop</span> <span class="i">Off</span> <span class="i">Location</span> <span class="c">//locations/15</span>
+<span class="i">Order</span> <span class="i">Status</span> <span class="c">//pending, picked up, processing, en route, delivered</span></pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>New Requirement!</h2>
+
+<h3>We need better visibility at Facilities</h3>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>An Order</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Order</span> <span class="i">Number</span>    
+<span class="i">Customer</span> <span class="i">Info</span> <span class="c">//name, phone, email, etc</span>
+<span class="i">Garments</span> <span class="c">//type, special instructions, etc</span>
+<span class="i">Pickup</span> <span class="i">Location</span> <span class="c">//locations/1</span>
+<span class="i">Drop</span> <span class="i">Off</span> <span class="i">Location</span> <span class="c">//locations/15</span>
+<span class="i">Order</span> <span class="i">Status</span> <span class="c">//pending, picked up, prep, perc, package, en route, delivered</span></pre>
+</td>
+</tr>
+</table>
+
+</section>
+
+</section>
+
+<section >
+
+<h2>Problems!</h2>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>An Order</h2>
+
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="i">Order</span> <span class="i">Number</span>    
+<span class="i">Customer</span> <span class="i">Info</span> <span class="c">//name, phone, email, etc</span>
+<span class="i">Garments</span> <span class="c">//type, special instructions, etc</span>
+<span class="i">Pickup</span> <span class="i">Location</span> <span class="c">//locations/1</span>
+<span class="i">Drop</span> <span class="i">Off</span> <span class="i">Location</span> <span class="c">//locations/15</span>
+<span class="i">Order</span> <span class="i">Status</span> <span class="c">//pending, picked up, prep, perc, package, en route, delivered</span></pre>
+</td>
+</tr>
+</table>
+
+<ul>
+<li>We don't want Customers to see Processing status</li>
+<li>We don't want Drivers to see Customer Info</li>
+<li>We don't want Facilities to see Customer Info</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Why does this happen?</h2>
+
+<ul>
+<li>Agile iterations can miss the big picture</li>
+<li>Noun-centered thinking</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Suggestions</h2>
+
+<ul>
+<li>A Sales Order</li>
+<li>A Delivery Order</li>
+<li><p>A Processing Order</p></li>
+<li>A Recurring/Planned Route</li>
+<li>A Route Instance</li>
+<li>A Route Report</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Lurking Business Requirements</h2>
+
+<h3>Requirements floating in the ether</h3>
+
+<p>Hat Tip: <a href="https://www.linkedin.com/in/larrymcnutt">Larry McNutt</a></p>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Example</h2>
+
+<h3>Invoice Billing</h3>
+
+<ul>
+<li>Send Invoices</li>
+<li>Collect Payments</li>
+<li>Frequent Customers can choose to be invoiced monthly</li>
+<li>We want to be able to extend Credits to Customers</li>
+<li>Customers should be able to pay in advance</li>
+<li>Customers should be able to get refunds of Credit Balances</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>No one ever mentioned...</h2>
+
+<h3>Accounts Receivable System</h3>
+
+<ul>
+<li>Oops, we just built one</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Why does this happen?</h2>
+
+<ul>
+<li>Inexperienced developers</li>
+<li>Insufficient domain conversations</li>
+<li>Stakeholders underestimate relative weights</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Phantom Business Requirements</h2>
+
+<h3>Inferred requirements that never seem to materialize</h3>
+
+<p>Hat Tip: <a href="https://github.com/Bishbulb">Dan Bishop</a></p>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Example</h2>
+
+<h3>Mandatory Stops</h3>
+
+<ul>
+<li>Even if there are no Orders for a Location, drive there anyway</li>
+<li>Drop off marketing materials, garment tags, etc</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<h2>Feels like a Lurking Business Requirement</h2>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Implementation</h2>
+
+<ul>
+<li>Add flag to Location?</li>
+<li>Is it a Route feature?</li>
+<li>Do we need to model "Marketing Materials"?</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Does it clarify the domain?</h2>
+
+<ul>
+<li>Do the users want to talk about this?</li>
+<li>Are you adding more code and tests to prop up this feature?</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Why does this happen?</h2>
+
+<ul>
+<li>Experienced developers</li>
+<li>Don't want to miss something important</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Muzzled Models</h2>
+
+<h3>Model is artificially constrained for non-business reasons</h3>
+
+<p>Hat Tip: Me</p>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Example</h2>
+
+<h3>Long form with required fields</h3>
+
+<ul>
+<li>Don't have one piece of information</li>
+<li>Leave computer to get it</li>
+<li>Session Expired!</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Example</h2>
+
+<h3>Storing Orders</h3>
+
+<ul>
+<li>Outbound racks are full</li>
+<li>Inbound racks are empty</li>
+<li>Rule: cannot put outgoing order on inbound rack</li>
+<li>App errors won't allow progress</li>
+<li>Ok, I'll lie!</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<blockquote>
+  <p>The warehouse is the system of record, not your software.
+<a href="http://geteventstore.com">Greg Young</a></p>
+</blockquote>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Why does this happen?</h2>
+
+<ul>
+<li>Overzealous Data integrity rules</li>
+<li>UX not fully considered</li>
+<li>UX tacked on at the end of the project</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<h2>What can we do?</h2>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>SOA + Messaging</h2>
+
+<blockquote>
+  <p>A service is the technical authority for a specific business capability. 
+All data and business rules reside within the service.
+<a href="http://www.udidahan.com/2015/02/02/finding-service-boundaries-%E2%80%93-illustrated-in-healthcare/">Udi Dahan</a></p>
+</blockquote>
+
+<ul>
+<li>A service is Autonomous</li>
+<li>A service exerts it's authority everywhere</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>SOA + Messaging</h2>
+
+<h3>Clear separation of concerns</h3>
+
+<ul>
+<li>Sales</li>
+<li>Delivery Management</li>
+<li><p>Processing</p></li>
+<li>No shared API</li>
+<li>No shared database</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Document Database</h2>
+
+<ul>
+<li>RavenDB</li>
+<li>MongoDB</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Event Sourcing</h2>
+
+<ul>
+<li>A log of everything that's happened</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Why wouldn't we do this?</h2>
+
+<ul>
+<li>Too hard to deploy applications</li>
+<li>Too hard to create more models</li>
+<li>Too hard to administer more databases</li>
+<li>Too hard to make global changes</li>
+<li>Too hard to introduce new technologies</li>
+</ul>
+
+</section>
+
+</section>
+
+<section >
+
+<h2>Discuss</h2>
+
+</section>
+
+<section >
+
+<section >
+
+<h2>Advanced Distributed Systems Design course with Udi Dahan</h2>
+
+<p>FREE - 2 days of the 5 day course</p>
+
+<h3><a href="http://go.particular.net/northdallas">http://go.particular.net/northdallas</a></h3>
+
+<h3>Code: OWYRYY</h3>
+
+<h3>Expires: August  25th</h3>
+
+<ul>
+<li>Distributed Systems Theory</li>
+<li>Coupling: Platform, Temporal, &amp; Spatial</li>
+<li>Bus &amp; Broker Architectural Styles</li>
+</ul>
+
+<h3>September 7-11: ADSD Course - Austin</h3>
+
+<h3>December 1-4: NSBCon 2015</h3>
+
+<p><a href="http://particular.net/nsbcon2015">http://particular.net/nsbcon2015</a></p>
 
 </section>
 
